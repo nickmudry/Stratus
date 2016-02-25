@@ -9,6 +9,9 @@ public class TwitchPlayer : MonoBehaviour {
     string username;
     public TextMesh userNameTxtMesh;
     public TextMesh userMessageTxtMesh;
+
+    public GameObject ChatBubbleGO;
+
     GameObject target;
     Rigidbody rigidbody;
 
