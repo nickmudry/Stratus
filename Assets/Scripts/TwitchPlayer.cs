@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class TwitchPlayer : MonoBehaviour {
 
@@ -7,8 +8,8 @@ public class TwitchPlayer : MonoBehaviour {
     public TwitchPlayerStates playerState = TwitchPlayerStates.FollowTarget;
 
     string username;
-    public TextMesh userNameTxtMesh;
-    public TextMesh userMessageTxtMesh;
+    public Text userNameTxtMesh;
+    public Text userMessageTxtMesh;
 
     public GameObject ChatBubbleGO;
 
@@ -31,6 +32,7 @@ public class TwitchPlayer : MonoBehaviour {
         if(lastMessageReceivedCounter > 5)
         {
             userMessageTxtMesh.text = "";
+            ChatBubbleGO.SetActive(false);
         }
 
         switch (playerState)
@@ -123,6 +125,7 @@ public class TwitchPlayer : MonoBehaviour {
         }
         else
         {
+            ChatBubbleGO.SetActive(true);
             userMessageTxtMesh.text = msg;
             lastMessageReceivedCounter = 0;
         }
