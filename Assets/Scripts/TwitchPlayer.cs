@@ -94,6 +94,7 @@ public class TwitchPlayer : MonoBehaviour {
 
     void GoToLocationEnter() {
         NavMeshPath path = new NavMeshPath();
+        Debug.Log(gotoLocationObject.transform.position);
         navAgent.CalculatePath(gotoLocationObject.transform.position, path);
         navAgent.SetPath(path);
         navAgent.Resume();
@@ -103,6 +104,7 @@ public class TwitchPlayer : MonoBehaviour {
     }
     void GoToLocationExit() {
         navAgent.Stop();
+        Debug.Log("stopped path");
     }
 
     public void displayChatMessage(string msg)

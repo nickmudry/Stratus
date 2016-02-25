@@ -24,14 +24,6 @@ public class TwitchIrcExample : MonoBehaviour
         TwitchIrc.Instance.OnExceptionThrown += OnExceptionThrown;
     }
 
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            TwitchIrc.Instance.GetUserCount();
-        }
-    }
-
     public void Connect()
     {
         TwitchIrc.Instance.Username = UsernameText.text;
