@@ -26,8 +26,23 @@ public class TwitchPlayer : MonoBehaviour {
         rigidbody = gameObject.GetComponent<Rigidbody>();
         navAgent = gameObject.GetComponent<NavMeshAgent>();
     }
+    void FixedUpdate()
+    {
+        if (rigidbody.velocity.magnitude > .075f)
+        {
+            GetComponent<Animator>().SetInteger("Stance", 1);
+        }
+        else
+        {
+            GetComponent<Animator>().SetInteger("Stance", 0);
+        }
+    }
+    
     void Update()
     {
+        
+        
+        
         lastMessageReceivedCounter += Time.deltaTime;
         if(lastMessageReceivedCounter > 5)
         {
